@@ -1,0 +1,1 @@
+# ConvenientStoreManagement  the terminal command interface of this program includes purchase file (purchase.txt)\n sell file (sell.txt)\n show_sale_amount(eg. 123\n)\n show_all_shop_name(eg. Name1 Name2..... \n) close 
