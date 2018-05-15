@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="FamilyMart"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/root/OOP/FamilyMart/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/root/OOP/FamilyMart/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/root/OOP/FamilyMart/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FamilyMart">
+				<Option output="/root/OOP/FamilyMart/cmake-build-debug/FamilyMart" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/OOP/FamilyMart/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 FamilyMart"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FamilyMart/fast">
+				<Option output="/root/OOP/FamilyMart/cmake-build-debug/FamilyMart" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/OOP/FamilyMart/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 FamilyMart/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/root/OOP/FamilyMart/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/root/OOP/FamilyMart/FamilyMart.cpp">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/FamilyMart.h">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/Item.cpp">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/Item.h">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/Shop.cpp">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/Shop.h">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/StringProcessor.cpp">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/StringProcessor.h">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/Warehouse.cpp">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/Warehouse.h">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/main.cpp">
+			<Option target="FamilyMart"/>
+		</Unit>
+		<Unit filename="/root/OOP/FamilyMart/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
