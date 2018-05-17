@@ -3,20 +3,20 @@
 //
 #include <iostream>
 #include "Shop.h"
-#include "Warehouse.h"
 
 Shop::Shop() {
 
 }
 
 Shop::~Shop() {
+    //关闭店铺时,将仓库关闭并清空
     delete mWarehouse;
     cout<<"deconstructor of ~Shop()"<<endl;
 }
 
 void Shop::setShopName(const string &mShopName) {
+    //读入shop.txt时设置商店名称
     shopName = mShopName;
-
 }
 
 void Shop::setItemNumber(const string &mItemNumber) {
@@ -29,30 +29,31 @@ void Shop::setItemNumber(const string &mItemNumber) {
     }else if(itemNumber <= 100){
         mWarehouse = new Warehouse(shopName, Warehouse::one_hundred);
     }else{
-        std::cout<<"the size of warehouse is illegal!"<<endl;
+        cout<<"the size of warehouse is illegal!"<<endl;
         return;
     }
-
+    //商店仓库已存储的商品数量
     mWarehouse->setWarehouseUsedsize(itemNumber);
 }
 
 
 void Shop::insertItem(Item &item) {
+    //初始读入shop.txt时将商品入库
     mItems.insert(mItems.end(),item);
 }
 
 string Shop::getShopName() {
+    //商店名称查询接口,主要供show_all_shop_name()使用
     return shopName;
 }
 
 void Shop::setSellItem(Item &sellItem, string &discount) {
-    cout<<"searching "<<sellItem.getItemName(sellItem)<<" in "<<endl;
+    //每售出一件商品（该商品不缺货的情况下）均做记录
     bool hasTheItem = false;
     Item *tempItem = new Item();
     for(auto &item:mItems){
-        cout<<item.getItemName(item)<<endl;
+//        cout<<item.getItemName(item)<<endl;
         if(sellItem.getItemName(sellItem)==item.getItemName(item)){
-            cout<<"find the item:"<<item.getItemName(item)<<endl;
             hasTheItem = true;
             tempItem = &item;
             break;
@@ -60,43 +61,40 @@ void Shop::setSellItem(Item &sellItem, string &discount) {
     }
     if(hasTheItem) {
         mSellItems.insert(mSellItems.end(), *tempItem);
-        cout<<"sell item in the shop, name:"<<tempItem->getItemName(*tempItem)<<endl;
-        mTurnover += tempItem->getItemPrice() * mStrProcessor->stringToFloat(discount);//计算商店营业额
-        cout << shopName << " turn over:" << mTurnover << endl;
+        //计算商店营业额
+        mTurnover += tempItem->getItemPrice() * mStrProcessor->stringToFloat(discount);
+//        cout << shopName << " turn over:" << mTurnover << endl;
         for(auto it = mItems.begin();it!=mItems.end();){
+            //将售出的商品从商店的库存中移除
             if(it->getItemName(*it) == tempItem->getItemName(*tempItem)){
                 it = mItems.erase(it);
-                cout<<"delete the sell item"<<endl;
+//                cout<<"delete the sell item"<<endl;
                 break;
             }else{
                 it++;
             }
         }
-    }else{
-        cout<<"the shop does not have the item:"<<endl;
     }
 }
 
 
 void Shop::increaseSaleAmount() {
+    //售出商品数量
     saleAmount+=1;
 }
 
 float Shop::getSaleAmount() {
+    //查询销售额（后助教改为总利润）
     return mTurnover;
 }
 
 void Shop::setPurchaseItem(const Item &item) {
+    //进货商品清单
     mPurchaseItems.insert(mPurchaseItems.end(),item);
 }
 
-void Shop::setPurchaseItemNumber(const string &purchaseNumber) {
-    purchaseAmount = mStrProcessor->stringToInt(purchaseNumber);
-
-}
-
-
 vector<Item> Shop::getItems() {
+    //查询商店目前库存的所有商品
     return mItems;
 }
 

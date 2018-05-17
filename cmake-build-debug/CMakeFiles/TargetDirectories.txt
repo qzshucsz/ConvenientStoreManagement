@@ -1,3 +1,0 @@
-/root/OOP/FamilyMart/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/root/OOP/FamilyMart/cmake-build-debug/CMakeFiles/edit_cache.dir
-/root/OOP/FamilyMart/cmake-build-debug/CMakeFiles/FamilyMart.dir

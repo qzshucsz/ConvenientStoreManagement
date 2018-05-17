@@ -3,11 +3,9 @@
 //
 #include <sstream>
 #include <iterator>
-#include <iostream>
 #include "StringProcessor.h"
 
 vector<string> StringProcessor::split(const string &mLine,const string& splitSignStr) {
-    std::cout<<"split string"<<endl;
     istringstream mStrStream(mLine);
     istringstream mSign(splitSignStr);
     vector<string> strs{istream_iterator<string>(mStrStream),istream_iterator<string>(mSign)};

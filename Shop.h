@@ -19,7 +19,6 @@ public:
     void setSellItem(Item &sellItem,string &discount);
     void increaseSaleAmount();
     void setPurchaseItem(const Item &item);
-    void setPurchaseItemNumber(const string &purchaseNumber);
 
     float getSaleAmount();
     string getShopName();
@@ -34,9 +33,7 @@ private:
     string shopName;//商店名称，由SHOP与编号组成
     int itemNumber;//商品总数
     int saleAmount = 0;
-    int purchaseAmount = 0;
     StringProcessor *mStrProcessor = new StringProcessor();
-
 
 };
 

@@ -1,18 +1,62 @@
-/root/software/clion-2018.1.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /root/OOP/FamilyMart
--- The C compiler identification is GNU 5.4.0
--- The CXX compiler identification is GNU 5.4.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/c++
--- Check for working CXX compiler: /usr/bin/c++ -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done
--- Generating done
--- Build files have been written to: /root/OOP/FamilyMart/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2017.3.4\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\OOP\Lab3\解答\FamilyMart
+-- The C compiler identification is GNU 6.3.0
+-- The CXX compiler identification is GNU 6.3.0
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- broken
+CMake Error at C:/Program Files/JetBrains/CLion 2017.3.4/bin/cmake/share/cmake-3.9/Modules/CMakeTestCCompiler.cmake:51 (message):
+  The C compiler "C:/MinGW/bin/gcc.exe" is not able to compile a simple test
+  program.
+
+  It fails with the following output:
+
+   Change Dir: D:/OOP/Lab3/瑙ｇ瓟/FamilyMart/cmake-build-debug/CMakeFiles/CMakeTmp
+
+  
+
+  Run Build Command:"C:/MinGW/bin/mingw32-make.exe" "cmTC_39e45/fast"
+
+  C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_39e45.dir\build.make
+  CMakeFiles/cmTC_39e45.dir/build
+
+  mingw32-make.exe[1]: Entering directory
+  'D:/OOP/Lab3/瑙ｇ瓟/FamilyMart/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+  Building C object CMakeFiles/cmTC_39e45.dir/testCCompiler.c.obj
+
+  C:\MinGW\bin\gcc.exe -o CMakeFiles\cmTC_39e45.dir\testCCompiler.c.obj -c
+  D:\OOP\Lab3\鐟欙絿鐡焅FamilyMart\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+
+
+  gcc.exe: error:
+  D:\OOP\Lab3\鐟欙絿鐡焅FamilyMart\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c:
+  No such file or directory
+
+  gcc.exe: fatal error: no input files
+
+  compilation terminated.
+
+  CMakeFiles\cmTC_39e45.dir\build.make:64: recipe for target
+  'CMakeFiles/cmTC_39e45.dir/testCCompiler.c.obj' failed
+
+  mingw32-make.exe[1]: *** [CMakeFiles/cmTC_39e45.dir/testCCompiler.c.obj]
+  Error 1
+
+  mingw32-make.exe[1]: Leaving directory
+  'D:/OOP/Lab3/瑙ｇ瓟/FamilyMart/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+  Makefile:125: recipe for target 'cmTC_39e45/fast' failed
+
+  mingw32-make.exe: *** [cmTC_39e45/fast] Error 2
+
+  
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "D:/OOP/Lab3/瑙ｇ瓟/FamilyMart/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "D:/OOP/Lab3/瑙ｇ瓟/FamilyMart/cmake-build-debug/CMakeFiles/CMakeError.log".

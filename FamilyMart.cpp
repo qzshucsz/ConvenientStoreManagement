@@ -5,11 +5,14 @@
 #include <fstream>
 #include <iostream>
 #include <cstring>
+#include <sstream>
 #include "FamilyMart.h"
+#define SHOP_MAXSIZE 20
 
 FamilyMart::FamilyMart(const string& shopFile) {
+    mShops.reserve(SHOP_MAXSIZE);//为店铺容器创建出足够的空间,避免内存重新配置而导致程序出错
     getStockInfoFromShopFile(*currentShop,shopFile);
-    cout<<"before sell:"<<endl;
+    cout<<"after initialization the "<<currentShop->getShopName()<<":"<<endl;
     for(auto &shop:mShops){
         cout<<shop.getShopName()<<endl;
         for(auto &item:shop.getItems()){
@@ -33,23 +36,21 @@ void FamilyMart::purchase_file(const string &purchaseFile) {
     }
     string lineStr;
     while(getline(purchaseStream,lineStr)){
-        cout<<strlen(lineStr.c_str())<<endl;
         if(!mStrProcessor->hasStartWith("\t",lineStr)){
             vector<string> mPurchaseItemInfos = mStrProcessor->split(lineStr," ");
             if(mStrProcessor->hasStartWith("PURCHASE",lineStr)){
                 for(auto &shop:mShops){
                     if(mStrProcessor->hasStartWith(shop.getShopName(),mPurchaseItemInfos[2])){
                         currentShop = &shop;
-                        cout<<"find the purchase shop:"<<currentShop->getShopName()<<endl;
+//                        cout<<"find the purchase shop:"<<currentShop->getShopName()<<endl;
                         break;
                     }
                 }
-                currentShop->setPurchaseItemNumber(mPurchaseItemInfos[1]);//进货商品数量
             }
             else if(mStrProcessor->hasStartWith("name",lineStr)){//商品信息标签，跳过
                 continue;
             }else{//记录进货的商品信息
-                cout<<"item name:"<<mPurchaseItemInfos[0]<<endl;
+//                cout<<"item name:"<<mPurchaseItemInfos[0]<<endl;
                 Item *purchaseItem = new Item();
                 purchaseItem->setItemName(mPurchaseItemInfos[0]);
                 purchaseItem->setItemPrice(mPurchaseItemInfos[1]);
@@ -64,7 +65,7 @@ void FamilyMart::purchase_file(const string &purchaseFile) {
 
     }
 
-    cout<<"after purchase:"<<endl;
+    cout<<"after finish the purchase:"<<endl;
     for(auto &shop:mShops){
         cout<<shop.getShopName()<<endl;
         for(auto &item:shop.getItems()){
@@ -84,10 +85,9 @@ void FamilyMart::sell_file(const string &sellFile) {
     }
     vector<string> mSellGoodsInfos;
     string lineStr;
-    string discount = "1";//商品进行打折销售的情况，默认值为不打折
     while(getline(sellStream,lineStr)) {
-        cout<<"strlen:"<<strlen(lineStr.c_str())<<endl;
-        if (strlen(lineStr.c_str())!=0) {
+        string discount = "1";//商品进行打折销售的情况，默认值为不打折
+        if (strlen(lineStr.c_str())!=0) {//跳过空白行
             if (mStrProcessor->hasStartWith("SALE", lineStr)) {
                 mSellGoodsInfos = mStrProcessor->split(lineStr, " ");
                 if (mSellGoodsInfos.size() == 2) {
@@ -109,23 +109,36 @@ void FamilyMart::sell_file(const string &sellFile) {
                 }
 
             }else {
-
                 bool hasFindItem = false;//借助该标志，如果商店的在售商品中没有sell清单中的商品，则呼略
                 for(auto &mItem:currentShop->getItems()){
                     if(mStrProcessor->hasStartWith(mItem.getItemName(mItem),lineStr)){
                         currentItem  = &mItem;
-                        cout<<"the sell item name:"<<currentItem ->getItemName(*currentItem )<<endl;
+//                      cout<<"the sell item name:"<<currentItem ->getItemName(*currentItem )<<endl;
                         hasFindItem = true;
                         break;
                     }
                 }
                 if(hasFindItem) {
-                    cout << "the shop name:" <<currentShop->getShopName() << endl;
+                    cout<<"sell the Item: "<<currentItem->getItemName(*currentItem)<<endl;
                     currentShop->setSellItem(*currentItem , discount);
                     currentShop->increaseSaleAmount();
+                    //卖出商品后,检查是否需要开新店
+                    float surplusForOpenNewShop = currentShop->getSaleAmount()- newShopNum*50;
+                    if(surplusForOpenNewShop >= 55) {
+                        int shopNum = newShopNum+1;
+                        stringstream intStream;
+                        intStream<<(++shopNum);
+                        string newShopName = "SHOP"+intStream.str();
+                        Shop *newShop = new Shop();
+                        newShop->setShopName(newShopName);
+//                        cout<<"the turnover is larger than 55, create new shop: "<<newShopName<<endl;
+                        mShops.push_back(*newShop);
+                        newShopNum++;
+                    }
                 }
             }
         }
+
     }
     cout<<"after sell"<<endl;
     for(auto &shop:mShops){
@@ -205,8 +218,6 @@ void FamilyMart::getStockInfoFromShopFile(Shop &mShop,const string &shopFile) {
         }
 
     }
-    mShops.insert(mShops.end(),mShop);
-
+    mShops.push_back(mShop);
 }
-
 

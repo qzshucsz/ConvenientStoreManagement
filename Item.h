@@ -17,6 +17,8 @@ public:
     void setItemShelfLife(const string& intemShelfLife);
     float getItemPrice();
     string getItemName(const Item &item);
+    string getItemProductionData(const Item &item);
+    string getItemShelfLife(const Item &item);
 private:
     string name;
     float price;

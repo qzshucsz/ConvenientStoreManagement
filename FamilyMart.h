@@ -21,11 +21,13 @@ public:
 
 private:
     void getStockInfoFromShopFile(Shop &mShop,const string& shopFile);
+    void createNewShop(const string &newShopName);
+    void insertShop(Shop &mShop);
     vector<Shop> mShops;
     StringProcessor *mStrProcessor = new StringProcessor();//字符串处理器，封装了本lab中需要的字符串处理接口
     Shop *currentShop = new Shop();
     Item *currentItem = new Item();
+    int newShopNum = 0;
 };
-
 
 #endif //FAMILYMART_FAMILYMART_H
